@@ -1,0 +1,29 @@
+{
+  "contacts": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "johndoe@gmail.com"
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "email": "janesmith@gmail.com"
+    },
+    {
+      "id": "3",
+      "name": "Michael Johnson",
+      "email": "michaeljohnson@gmail.com"
+    },
+    {
+      "id": "4",
+      "name": "Emily Davis",
+      "email": "emilydavis@gmail.com"
+    },
+    {
+      "id": "5",
+      "name": "David Brown",
+      "email": "davidbrown@gmail.com"
+    }
+  ]
+}
