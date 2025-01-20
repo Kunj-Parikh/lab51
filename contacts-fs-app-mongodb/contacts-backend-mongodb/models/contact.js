@@ -12,8 +12,17 @@ mongoose.connect(DB_URI).then(() => (console.log("Connection Established"))).cat
 });
 
 const contactSchema = new mongoose.Schema({
-  name: String,
-  email: String,
+  name: {type: String, required: true, minLength: 2 },
+  email: {
+    type: String,
+    validate:{
+      validator: function(v) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)
+      },
+      message: props => `${props.value} is not a valid email!`
+    },
+    required: true
+  }
 });
 
 // configure toJSON method

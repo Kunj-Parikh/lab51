@@ -1,9 +1,12 @@
 import axios from "axios";
 
-const baseURL = "/api/contacts";
+const baseURL = "http://localhost:3001/api/contacts";
 
-const getContact = () => {
-  return axios.get(baseURL).then((res) => res.data);
+const getContact = async () => {
+  const res = await axios.get(baseURL);
+  console.log(res.data);
+  console.log(typeof(res.data));
+  return res.data;
 };
 
 const addContact = (contact) => {

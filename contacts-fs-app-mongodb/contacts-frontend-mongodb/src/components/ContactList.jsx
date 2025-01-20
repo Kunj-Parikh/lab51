@@ -6,10 +6,11 @@ const ContactList = ({ contacts , handleDelete}) => {
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
   };
-
   const filteredContacts = contacts.filter((item) =>
     item.name.toLowerCase().includes(searchTerm.trim().toLowerCase())
   );
+
+  // console.log(contacts);
 
   return (
     <>

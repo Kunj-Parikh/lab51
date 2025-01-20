@@ -42,6 +42,17 @@ button {
   overflow: hidden;
   margin-top: 20px;
 }
+.error {
+  text-align: center;
+  background-color: rgb(151, 21, 21);
+  color: white;
+  width: 30%;
+  padding: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+}
 
 .contact-table th {
   background-color: #1abc9c;

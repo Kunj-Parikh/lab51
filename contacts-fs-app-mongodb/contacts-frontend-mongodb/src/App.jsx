@@ -36,12 +36,30 @@ const App = () => {
         alert("The movie needs a name to be added.");
         return;
       } else {
-        contactService.addContact(newContactObj).then((data) => {
-          setContacts(contacts.concat(data));
-        });
+        contactService
+          .addContact(newContactObj)
+          .then((data) => {
+            setContacts(contacts.concat(data));
+          })
+          .catch((error) => {
+            console.log(error.response.data.error);
+
+            // handleErr(error.response.data.error);
+            // Make it so that the error.response.data.error message is displayed for 5 seconds in a red warning box atop the contact list.
+            const errorDiv = document.createElement("div");
+            errorDiv.className = "error";
+            errorDiv.textContent = error.response.data.error;
+            errorDiv.className = 'error';
+            document.body.appendChild(errorDiv);
+            setTimeout(() => {
+              errorDiv.remove();
+            }, 5000);
+
+          });
       }
     }
   };
+
 
   const handleDelete = (contact) => {
     const confirmDelete = window.confirm(
